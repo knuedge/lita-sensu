@@ -1,0 +1,35 @@
+Documentation:
+  Exclude:
+    - lib/lita/handlers/sensu2.rb
+
+FileName:
+  Exclude:
+    - lib/lita-sensu2.rb
+
+Metrics/LineLength:
+  Max: 100
+  Exclude:
+    - 'spec/**/*_spec.rb'
+
+Metrics/AbcSize:
+  Max: 27
+
+Metrics/CyclomaticComplexity:
+  Max: 8
+
+Metrics/PerceivedComplexity:
+  Max: 10
+
+Metrics/MethodLength:
+  Max: 30
+
+Metrics/ClassLength:
+  Max: 200
+
+Metrics/BlockLength:
+  Max: 30
+  Exclude:
+    - '*.gemspec'
+    - Rakefile
+    - 'spec/**/*_spec.rb'
+    - 'spec/spec_helper.rb'

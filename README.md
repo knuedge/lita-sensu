@@ -1,18 +1,18 @@
-# lita-sensu
+# lita-sensu2
 
-[![Gem Version](http://img.shields.io/gem/v/lita-sensu.svg)](https://rubygems.org/gems/lita-sensu)
-[![Build Status](https://travis-ci.org/jlambert121/lita-sensu.png?branch=master)](https://travis-ci.org/jlambert121/lita-sensu)
-[![Coverage Status](https://coveralls.io/repos/jlambert121/lita-sensu/badge.png)](https://coveralls.io/r/jlambert121/lita-sensu)
+[![Gem Version](http://img.shields.io/gem/v/lita-sensu2.svg)](https://rubygems.org/gems/lita-sensu2)
+[![Build Status](https://travis-ci.org/knuedge/lita-sensu2.png?branch=master)](https://travis-ci.org/knuedge/lita-sensu2)
+[![Coverage Status](https://coveralls.io/repos/knuedge/lita-sensu2/badge.png)](https://coveralls.io/r/knuedge/lita-sensu2)
 
-Lita handler for working with the [Sensu](http://sensuapp.org) monitoring framework.
+A maintained Lita handler for working with the [Sensu](http://sensuapp.org) monitoring framework.
 
-**Note**: This handler requires Lita >= 4.3.
+**Note**: This handler requires Lita >= 4.7.
 ## Installation
 
-Add lita-sensu to your Lita instance's Gemfile:
+Add lita-sensu2 to your Lita instance's Gemfile:
 
 ``` ruby
-gem "lita-sensu"
+gem 'lita-sensu2'
 ```
 
 ## Configuration
@@ -23,9 +23,9 @@ parameters are optional, by default the handler will connect to 127.0.0.1:4567
 for the sensu API service.
 
 ```ruby
-config.handlers.sensu.api_url = '127.0.0.1'
-config.handlers.sensu.api_port = 4567
-config.handlers.sensu.domain = 'mydomain.com'
+config.handlers.sensu2.api_url = '127.0.0.1'
+config.handlers.sensu2.api_port = 4567
+config.handlers.sensu2.domain = 'mydomain.com'
 ```
 
 ## Usage
