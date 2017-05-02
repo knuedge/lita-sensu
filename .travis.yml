@@ -1,9 +1,17 @@
 language: ruby
 sudo: required
 rvm:
-  - 2.3.3
+- 2.3.3
 script: bundle exec rake
 before_install:
-  - gem update --system
+- gem update --system
 services:
-  - redis-server
+- redis-server
+deploy:
+  provider: rubygems
+  api_key:
+    secure: mD1q14xOhMLx1RTJzSEX/a/Xf8L3axRXeW74N9lrHfmrBbk5I5/O1yT14Al89tLZ99A3Qm3AV/eOhsZXxc2MftdJ2lpmGWhnoaeAMD50ie5XTzIsFRsUMZkMdVhwEBC9Tj8OSB3jNc0hwzb/FPD72RU41vb43rDaMHTmjA/170cDpAyFlZq9lmWSeCPBM59UBwSlWZdyHzfGV2FyZt8wFFIZ/dCuZ+mwkrjbx9cZdwdBGDWWRDCF/61hkb2Blm5ufTqW235gSMdeYIkNt3RtXXgm4B2tiRixNZFZMloRwjvR+B240WkwoQKb/95FTgZAlqVAo88SqVNqaYp1CBTFkeh9fbEpWel83ddxTOqz1KjLRa9wSlY5Gv20L5ZuLasIIowH6RYG7ezOBMArvLTt7UehTpQLnmgRNyze0pBgoG5/m6P9WOavb7imtNaDGN4/zMe9DD29g4+ngxjtuBtfQseGDnoJw62H2aJO8iZlNhVAhaMliz8O7gybL7MLyzvxSK1SXv6MAUZEGf71riUTSDTA6JzU3CbMJdLqPfk9YV0ZJ9kXBoztiCOx/+RjtQRLkQVv8rs+9sFf7s2302LWZJoMjHaZ8K6jnJ2MrByAK17mfrMJCU7YoJATWhN+yOehk0R/jHQTPj1YaUKmH8bom0QhgXiDu+lfH2nipGYLTac=
+  gem: lita-sensu2
+  on:
+    tags: true
+    repo: knuedge/lita-sensu2
