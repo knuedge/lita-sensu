@@ -40,6 +40,7 @@ Available commands:
 `sensu remove client <client>` - Remove client from sensu
 `sensu resolve event <client>[/service]` - Resolve event/all events for client
 `sensu silence <hostname>[/<check>][ for <duration><units>]` - Silence event
+`sensu silences` - List current silences
 `sensu stashes` - Displays current sensu stashes
 
 ## License

@@ -67,6 +67,12 @@ module Lita
       )
 
       route(
+        /^sensu silences$/,
+        :silences,
+        help: { 'sensu silences' => 'Displays current sensu silences' }
+      )
+
+      route(
         /sensu stash(es)?/,
         :stashes,
         help: { 'sensu stashes' => 'Displays current sensu stashes' }
@@ -181,6 +187,16 @@ module Lita
         post_data = silence_post_data(response.user, expiration, client, check)
         resp = http_post(silence_url, post_data)
         response.reply silence_post_msg(resp, post_data, human_duration, check_alias(client, check))
+      end
+
+      def silences(response)
+        resp = http_get(silence_url)
+        if resp.status == 200
+          response.reply(render_template('silences', silences: sorted_by(resp.body, :subscription)))
+        else
+          log.warn("Sensu returned an internal error resolving #{silence_url}")
+          response.reply('An error occurred fetching silences')
+        end
       end
 
       def stashes(response)
