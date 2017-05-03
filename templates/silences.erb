@@ -1,0 +1,15 @@
+<% @silences.each do |silence| %>
+<%= silence[:id] %>
+<% if silence[:creator] %>
+ added by <%= silence[:creator] %>
+<% end %>
+<% if silence[:expire] != -1 %>
+, expiring in <%= silence[:expire] %> seconds
+<% end %>
+<% if silence[:expire_on_resolve] %>
+, expiring automatically on resolution
+<% end %>
+<% if silence[:reason] %>
+, with reason '<%= silence[:reason] %>'
+<% end %>
+<% end %>
